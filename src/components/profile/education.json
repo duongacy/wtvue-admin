@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_profile_educations",
+  "info": {
+    "displayName": "Education",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "major": {
+      "type": "string",
+      "required": true
+    },
+    "organization": {
+      "type": "string",
+      "required": true
+    },
+    "from": {
+      "type": "date",
+      "required": true
+    },
+    "to": {
+      "type": "date",
+      "required": true
+    }
+  }
+}

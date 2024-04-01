@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_profile_certifications",
+  "info": {
+    "displayName": "Certification",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "field": {
+      "type": "string",
+      "required": true
+    },
+    "organization": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    }
+  }
+}

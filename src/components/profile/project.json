@@ -27,6 +27,14 @@
     "description": {
       "type": "text",
       "required": true
+    },
+    "from": {
+      "type": "date",
+      "required": true
+    },
+    "to": {
+      "type": "date",
+      "required": true
     }
   }
 }

@@ -54,6 +54,30 @@
       "type": "component",
       "repeatable": true,
       "component": "profile.work-experience"
+    },
+    "certifications": {
+      "displayName": "Certification",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.certification"
+    },
+    "educations": {
+      "displayName": "Education",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.education"
+    },
+    "communities": {
+      "displayName": "Community",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.community"
+    },
+    "skills": {
+      "displayName": "Skill",
+      "type": "component",
+      "repeatable": true,
+      "component": "profile.skill"
     }
   }
 }

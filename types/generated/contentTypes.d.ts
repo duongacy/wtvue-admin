@@ -793,7 +793,8 @@ export interface ApiCompanyCompany extends Schema.CollectionType {
   info: {
     singularName: 'company';
     pluralName: 'companies';
-    displayName: 'company';
+    displayName: 'Company';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -876,6 +877,10 @@ export interface ApiProfileProfile extends Schema.SingleType {
     mail: Attribute.Email & Attribute.Required;
     github: Attribute.String;
     experience: Attribute.Component<'profile.work-experience', true>;
+    certifications: Attribute.Component<'profile.certification', true>;
+    educations: Attribute.Component<'profile.education', true>;
+    communities: Attribute.Component<'profile.community', true>;
+    skills: Attribute.Component<'profile.skill', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

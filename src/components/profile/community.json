@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_profile_communities",
+  "info": {
+    "displayName": "Activity",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
