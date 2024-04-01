@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * restaurant service
+ * profile service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::restaurant.restaurant');
+module.exports = createCoreService('api::profile.profile');

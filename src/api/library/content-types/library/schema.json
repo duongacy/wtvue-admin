@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "libraries",
+  "info": {
+    "singularName": "library",
+    "pluralName": "libraries",
+    "displayName": "Library"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    }
+  }
+}

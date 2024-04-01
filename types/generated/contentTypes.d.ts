@@ -788,34 +788,31 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiCategoryCategory extends Schema.CollectionType {
-  collectionName: 'categories';
+export interface ApiCompanyCompany extends Schema.CollectionType {
+  collectionName: 'companies';
   info: {
-    singularName: 'category';
-    pluralName: 'categories';
-    displayName: 'Category';
+    singularName: 'company';
+    pluralName: 'companies';
+    displayName: 'company';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String & Attribute.Required & Attribute.Unique;
-    restaurants: Attribute.Relation<
-      'api::category.category',
-      'manyToMany',
-      'api::restaurant.restaurant'
-    >;
+    name: Attribute.String & Attribute.Required;
+    location: Attribute.String;
+    description: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::category.category',
+      'api::company.company',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::category.category',
+      'api::company.company',
       'oneToOne',
       'admin::user'
     > &
@@ -823,36 +820,73 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiRestaurantRestaurant extends Schema.CollectionType {
-  collectionName: 'restaurants';
+export interface ApiLibraryLibrary extends Schema.CollectionType {
+  collectionName: 'libraries';
   info: {
-    singularName: 'restaurant';
-    pluralName: 'restaurants';
-    displayName: 'Restaurant';
+    singularName: 'library';
+    pluralName: 'libraries';
+    displayName: 'Library';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::library.library',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::library.library',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProfileProfile extends Schema.SingleType {
+  collectionName: 'profiles';
+  info: {
+    singularName: 'profile';
+    pluralName: 'profiles';
+    displayName: 'Profile';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Name: Attribute.String & Attribute.Required & Attribute.Unique;
-    categories: Attribute.Relation<
-      'api::restaurant.restaurant',
-      'manyToMany',
-      'api::category.category'
+    projects: Attribute.Component<'profile.project', true>;
+    techstack: Attribute.Relation<
+      'api::profile.profile',
+      'oneToMany',
+      'api::library.library'
     >;
-    Description: Attribute.RichText;
+    name: Attribute.String & Attribute.Required;
+    avatar: Attribute.Media & Attribute.Required;
+    role: Attribute.String & Attribute.Required;
+    description: Attribute.Text & Attribute.Required;
+    mail: Attribute.Email & Attribute.Required;
+    github: Attribute.String;
+    experience: Attribute.Component<'profile.work-experience', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::restaurant.restaurant',
+      'api::profile.profile',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::restaurant.restaurant',
+      'api::profile.profile',
       'oneToOne',
       'admin::user'
     > &
@@ -878,8 +912,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::category.category': ApiCategoryCategory;
-      'api::restaurant.restaurant': ApiRestaurantRestaurant;
+      'api::company.company': ApiCompanyCompany;
+      'api::library.library': ApiLibraryLibrary;
+      'api::profile.profile': ApiProfileProfile;
     }
   }
 }

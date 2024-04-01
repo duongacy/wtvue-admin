@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_profile_projects",
+  "info": {
+    "displayName": "Project",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "company": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::company.company"
+    },
+    "libraries": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::library.library"
+    },
+    "responsibilities": {
+      "type": "json",
+      "required": false
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
