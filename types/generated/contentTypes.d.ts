@@ -827,6 +827,7 @@ export interface ApiLibraryLibrary extends Schema.CollectionType {
     singularName: 'library';
     pluralName: 'libraries';
     displayName: 'Library';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -834,6 +835,7 @@ export interface ApiLibraryLibrary extends Schema.CollectionType {
   attributes: {
     name: Attribute.String & Attribute.Required;
     description: Attribute.Text;
+    url: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -865,22 +867,24 @@ export interface ApiProfileProfile extends Schema.SingleType {
   };
   attributes: {
     projects: Attribute.Component<'profile.project', true>;
-    techstack: Attribute.Relation<
-      'api::profile.profile',
-      'oneToMany',
-      'api::library.library'
-    >;
     name: Attribute.String & Attribute.Required;
     avatar: Attribute.Media & Attribute.Required;
     role: Attribute.String & Attribute.Required;
     description: Attribute.Text & Attribute.Required;
     mail: Attribute.Email & Attribute.Required;
     github: Attribute.String;
-    experience: Attribute.Component<'profile.work-experience', true>;
+    experiences: Attribute.Component<'profile.work-experience', true>;
     certifications: Attribute.Component<'profile.certification', true>;
     educations: Attribute.Component<'profile.education', true>;
     communities: Attribute.Component<'profile.community', true>;
     skills: Attribute.Component<'profile.skill', true>;
+    phone: Attribute.String & Attribute.Required;
+    libraries: Attribute.Relation<
+      'api::profile.profile',
+      'oneToMany',
+      'api::library.library'
+    >;
+    techstack: Attribute.Component<'profile.technology', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

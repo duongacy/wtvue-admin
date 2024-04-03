@@ -4,7 +4,8 @@
   "info": {
     "singularName": "library",
     "pluralName": "libraries",
-    "displayName": "Library"
+    "displayName": "Library",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,10 @@
       "required": true
     },
     "description": {
+      "type": "text",
+      "required": false
+    },
+    "url": {
       "type": "text",
       "required": false
     }

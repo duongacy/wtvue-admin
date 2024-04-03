@@ -76,6 +76,18 @@ export interface ProfileSkill extends Schema.Component {
   };
 }
 
+export interface ProfileTechnology extends Schema.Component {
+  collectionName: 'components_profile_technologies';
+  info: {
+    displayName: 'Technology';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    url: Attribute.String & Attribute.Required;
+  };
+}
+
 export interface ProfileWorkExperience extends Schema.Component {
   collectionName: 'components_profile_work_experiences';
   info: {
@@ -103,6 +115,7 @@ declare module '@strapi/types' {
       'profile.education': ProfileEducation;
       'profile.project': ProfileProject;
       'profile.skill': ProfileSkill;
+      'profile.technology': ProfileTechnology;
       'profile.work-experience': ProfileWorkExperience;
     }
   }
