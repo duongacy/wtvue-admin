@@ -14,9 +14,6 @@
       "type": "date",
       "required": true
     },
-    "location": {
-      "type": "string"
-    },
     "role": {
       "type": "string",
       "required": true

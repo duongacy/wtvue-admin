@@ -84,10 +84,8 @@
       "target": "api::library.library"
     },
     "techstack": {
-      "displayName": "Technology",
-      "type": "component",
-      "repeatable": true,
-      "component": "profile.technology"
+      "type": "json",
+      "required": true
     }
   }
 }

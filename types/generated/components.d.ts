@@ -97,7 +97,6 @@ export interface ProfileWorkExperience extends Schema.Component {
   attributes: {
     from: Attribute.Date & Attribute.Required;
     to: Attribute.Date & Attribute.Required;
-    location: Attribute.String;
     role: Attribute.String & Attribute.Required;
     company: Attribute.Relation<
       'profile.work-experience',
